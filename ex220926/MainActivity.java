@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        Log. d(debug), v(verbose), e(Error), i(Info), w(Warn), A(Assert)
-        Log.d("출력","Hello World");
+        Log.d("출력", "Hello World");
 //        맨 아래 Logcat 에서 돋보기에 태그 값 입력하면 확인 가능
 
 //        Java란?
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         long l1 = 2300000000l; // 혹은 long l1 = 2300000000L;
 
 //        float은 4byte / double은 8byte
-//        float f1 = 2.3;  Error!!
+//        float f1 = 2.3;  Error!! : 실수는 기본이 double이기 때문에 float형으로 바로 선언 불가!
         float f1 = (float) 2.3;  // double형 2.3을 (float)로 형변환
         float f2 = 2.3f;
         float f3 = 2.3F;
@@ -106,22 +106,22 @@ public class MainActivity extends AppCompatActivity {
 //        기본 자료형은 메모리에 값을 : call by value
 //        래퍼런스 값은 주소로 되어 있음 : call by reference (reference는 '참조하다'는 뜻)
 //        래퍼런스 값은 String.valueOf()로 저장된 값을 볼 수 없음 >> 인덱스로 값을 가져와야 함
-        
-        
+
+
 //        Java 배열의 특징
 //        1) 생성(new) 시, 반드시 크기가 지정되어야 함.
 //          String[] drinks = new String[]; : Error!
 //        2) 생성과 동시에 초기화 시에는 크기 지정 필요X & new String 생략 가능
         String[] drinks2 = new String[]{"아침햇살", "포카리스웨트", "코코팜"};
         String[] drinks3 = {"아침햇살", "포카리스웨트", "코코팜"};
-        
+
 //        String의 생성은 new 생략 가능
         String my = "강민주";
-        
+
         String[] snacks = {"뿌셔뿌셔불고기맛", "스윙칩"};
-        
-        Log.d("출력2",  drinks2[0]);  // 아침햇살
-        Log.d("출력2",  snacks[0]);   // 뿌셔뿌셔불고기맛
+
+        Log.d("출력2", drinks2[0]);  // 아침햇살
+        Log.d("출력2", snacks[0]);   // 뿌셔뿌셔불고기맛
 
         drinks2 = snacks;
 //      drinks2 래퍼런스에 저장된 주소값이 snacks의 주소로 바뀜
@@ -137,5 +137,42 @@ public class MainActivity extends AppCompatActivity {
 //      drinks2에 저장된 주소가 snacks로 바뀌었기 때문에
 //      snacks의 주소에 저장된 값들의 변경시, drinks의 인덱스 값도 snacks의 인덱스 값과 같게 나옴
 
+        // Java에서 조건문
+        int age = 20;
+        if (age >= 20) {
+            Log.d("출력5", "성인입니다.");
+        } else if (age >= 17) {
+            Log.d("출력5", "고등학생입니다.");
+        } else if (age >= 14) {
+            Log.d("출력5", "중학생입니다.");
+        } else if (age >= 8) {
+            Log.d("출력5", "초등학생입니다.");
+        } else {
+            Log.d("출력5", "미취학아동입니다.");
+        }
+
+//        Java에서 반복문 : for문 / while문
+        int a = 1;
+
+        while (true) {
+            Log.d("출력6", String.valueOf(a));
+
+            // 복합 대입 연산자
+            a += 1;  // a = a + 1;
+            // a++;
+            // 위에 3개 식 모두 같은 의미
+
+            if (a == 10) {
+                break;
+            }
+        }
+            for (int i = 1; i <= 10; i++){
+                Log.d("출력7", String.valueOf(i));
+            }
+
+            String[] foods = {"민트초코", "피스타치오", "슈팅스타"};
+            for (int i = 0; i < foods.length; i++){
+                Log.d("출력8", foods[i]);
+            }
+        }
     }
-}
