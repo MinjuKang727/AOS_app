@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">강민주프로젝트</string>
+    <string-array name="fruits">
+        <item>방금 베어 문 사과</item>
+        <item>빨간맛 체리</item>
+        <item>부끄부끄 복숭아</item>
+    </string-array>
+</resources>
